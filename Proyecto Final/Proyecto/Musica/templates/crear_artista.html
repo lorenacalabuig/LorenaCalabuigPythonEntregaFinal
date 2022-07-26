@@ -1,0 +1,16 @@
+
+{% block titulo %}
+Creación de Artistas
+{% endblock titulo %}
+
+{% block body %}
+<form method = "POST">
+    {% csrf_token %}
+    {% if error %}
+        <h2>{{ error }}</h2>
+    {% else %} 
+        {{ artista_form.as_p }}
+        <button type = "submit">Crear</button>
+    {% endif %}
+</form>
+{% endblock body %}

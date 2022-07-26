@@ -1,0 +1,12 @@
+
+{% block titulo %}
+Eliminación de Artista
+{% endblock titulo %}
+{% block body %}
+<form method = "POST">
+{% csrf_token %}
+<h2>¿Desea eliminar el registro {{ artista.nombre }}?</h2>
+    <button type = "submit">Eliminar</button>
+    <a href = "{% url 'listar_artista' %}">Cancelar</a>
+</form>
+{% endblock body %}
